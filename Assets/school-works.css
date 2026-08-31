@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.sw-main-content {
+    display: flex;
+
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    padding-top: 5.5%;
+
+    justify-content: center;
+    align-items: stretch;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   DECKS
+   ========================= */
+
+.red-deck,
+.violet-deck,
+.blue-deck {
+    display: flex;
+    flex-direction: column;
+
+    width: 33.3333%;
+    min-height: 100vh;
+    height: auto;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-bottom: 4rem;
+}
+
+
+/* =========================
+   CARD AREA
+   ========================= */
+
+.deck-cards {
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+    height: 55vh;
+    min-height: 300px;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    /*
+        The cards are allowed to overlap each other,
+        but they cannot visually escape this area.
+    */
+    overflow: hidden;
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+.deck-cards img {
+    position: absolute;
+
+    /*
+        Width is controlled by the card area.
+        Height is also limited so the image
+        cannot become taller than its assigned space.
+    */
+    width: auto;
+    max-width: 55%;
+    max-height: calc(100% - 80px);
+
+    height: auto;
+
+    object-fit: contain;
+
+    border: 1px solid black;
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
+
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+/* =========================
+   FRONT CARDS
+   ========================= */
+
+.red-deck-img,
+.violet-deck-img,
+.blue-deck-img {
+    z-index: 2;
+
+    animation-name: anim-one;
+}
+
+
+/* =========================
+   BACK CARDS
+   ========================= */
+
+.red-deck-2-img,
+.violet-deck-2-img,
+.blue-deck-2-img {
+    z-index: 1;
+
+    animation-name: anim-two;
+}
+
+
+/* =========================
+   TEXT LINKS
+   ========================= */
+
+.quizzes-link,
+.exams-link,
+.lab-act-link {
+    display: block;
+
+    margin-top: 1.5rem;
+
+    flex-shrink: 0;
+
+    color: #FFFFFF;
+    text-decoration: none;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    letter-spacing: .2em;
+
+    text-align: center;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes anim-one {
+    from {
+        transform: translate(0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(30px, 15px) rotate(10deg);
+    }
+}
+
+
+@keyframes anim-two {
+    from {
+        transform: translate(0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-10px, 20px) rotate(-10deg);
+    }
+}
+
+
+/* ==================================================
+   TABLETS
+   ================================================== */
+
+@media (max-width: 1024px) {
+
+    .sw-main-content {
+        padding-top: 6%;
+    }
+
+    .deck-cards {
+        height: 50vh;
+        min-height: 280px;
+    }
+
+    .deck-cards img {
+        max-width: 60%;
+        max-height: calc(100% - 70px);
+    }
+
+    .quizzes-link,
+    .exams-link,
+    .lab-act-link {
+        margin-top: 1.2rem;
+
+        font-size: .8rem;
+        letter-spacing: .15em;
+    }
+}
+
+
+/* ==================================================
+   SHORT DESKTOP
+   ================================================== */
+
+@media (max-height: 700px) and (min-width: 769px) {
+
+    .sw-main-content {
+        padding-top: 6%;
+    }
+
+    .red-deck,
+    .violet-deck,
+    .blue-deck {
+        min-height: 100vh;
+        padding-bottom: 2rem;
+    }
+
+    .deck-cards {
+        height: 48vh;
+        min-height: 240px;
+    }
+
+    .deck-cards img {
+        max-width: 50%;
+        max-height: calc(100% - 60px);
+    }
+
+    .quizzes-link,
+    .exams-link,
+    .lab-act-link {
+        margin-top: 1rem;
+        font-size: .75rem;
+    }
+}
+
+
+/* ==================================================
+   VERY SHORT DESKTOP
+   ================================================== */
+
+@media (max-height: 550px) and (min-width: 769px) {
+
+    .sw-main-content {
+        min-height: 100vh;
+        padding-top: 6%;
+    }
+
+    .red-deck,
+    .violet-deck,
+    .blue-deck {
+        min-height: 100vh;
+    }
+
+    .deck-cards {
+        height: 42vh;
+        min-height: 210px;
+    }
+
+    .deck-cards img {
+        max-width: 45%;
+        max-height: calc(100% - 50px);
+    }
+
+    .quizzes-link,
+    .exams-link,
+    .lab-act-link {
+        margin-top: .7rem;
+        font-size: .65rem;
+    }
+}
+
+
+/* ==================================================
+   SMALL TABLETS / LARGE PHONES
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .sw-main-content {
+        flex-direction: column;
+
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+
+        padding-top: 10%;
+        padding-bottom: 5%;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .red-deck,
+    .violet-deck,
+    .blue-deck {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+
+        padding-bottom: 3rem;
+    }
+
+    .deck-cards {
+        width: 80%;
+        height: 22rem;
+        min-height: 22rem;
+    }
+
+    .deck-cards img {
+        max-width: 45%;
+        max-height: calc(100% - 60px);
+    }
+
+    .quizzes-link,
+    .exams-link,
+    .lab-act-link {
+        margin-top: 1.5rem;
+
+        font-size: .75rem;
+        letter-spacing: .12em;
+    }
+}
+
+
+/* ==================================================
+   PHONES
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    .sw-main-content {
+        padding-top: 12%;
+    }
+
+    .deck-cards {
+        width: 90%;
+        height: 18rem;
+        min-height: 18rem;
+    }
+
+    .deck-cards img {
+        max-width: 55%;
+        max-height: calc(100% - 50px);
+    }
+
+    .quizzes-link,
+    .exams-link,
+    .lab-act-link {
+        margin-top: 1rem;
+
+        font-size: .6rem;
+        letter-spacing: .08em;
+    }
+}
+
+
+/* ==================================================
+   VERY SMALL PHONES
+   ================================================== */
+
+@media (max-width: 360px) {
+
+    .deck-cards {
+        width: 95%;
+        height: 16rem;
+        min-height: 16rem;
+    }
+
+    .deck-cards img {
+        max-width: 55%;
+        max-height: calc(100% - 40px);
+    }
+
+    .quizzes-link,
+    .exams-link,
+    .lab-act-link {
+        font-size: .55rem;
+        letter-spacing: .06em;
+    }
+}

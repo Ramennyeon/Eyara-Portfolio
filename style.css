@@ -1,0 +1,767 @@
+/* ==================================================
+   GLOBAL
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    background-image:
+        url("images/purple gradient clouds.png"),
+        url("images/shooting_star.gif"),
+        linear-gradient(
+            45deg,
+            #332877 0%,
+            #332877 60%,
+            #130042 78%,
+            #120C41 88%,
+            #11193F 94%,
+            #08051F 100%
+        );
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+    background-size:
+        100% 47%,
+        30% auto,
+        cover;
+
+    background-position:
+        bottom center,
+        top right,
+        center center;
+}
+
+
+/* ==================================================
+   TOP NAVIGATION
+   ================================================== */
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+
+    width: 100%;
+    height: 9%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.top-nav ul {
+    display: flex;
+
+    width: 50%;
+    height: 70%;
+    padding: 0 5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #160346;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.top-nav ul li {
+    list-style: none;
+}
+
+.home,
+.about-me,
+.school-works {
+    display: inline-block;
+
+    padding: 15px 45px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home:hover,
+.about-me:hover,
+.school-works:hover {
+    background-image: url("images/hover_image.png");
+
+    color: #D6BEEF;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/* ==================================================
+   MAIN CONTENT
+   ================================================== */
+
+.main-content {
+    display: flex;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding-top: 6%;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   PROFILE SIDE
+   ================================================== */
+
+.profile-side {
+    position: relative;
+
+    width: 50%;
+    min-height: 100%;
+
+    flex-shrink: 0;
+}
+
+.profile-side img {
+    position: absolute;
+
+    width: 35%;
+    height: auto;
+
+    margin-top: 5%;
+    margin-left: 35%;
+
+    border: 1px solid black;
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
+
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+/* ==================================================
+   PROFILE ANIMATIONS
+   ================================================== */
+
+.profile-pic {
+    z-index: 3;
+    animation-name: anim-one;
+}
+
+.background-pic-one {
+    z-index: 2;
+    animation-name: anim-two;
+}
+
+.background-pic-two {
+    z-index: 1;
+    animation-name: anim-three;
+}
+
+
+@keyframes anim-one {
+    from {
+        transform: translate(0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(40px, 15px) rotate(10deg);
+    }
+}
+
+
+@keyframes anim-two {
+    from {
+        transform: translate(0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-30px, 25px) rotate(-20deg);
+    }
+}
+
+
+@keyframes anim-three {
+    from {
+        transform: translate(0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50px, 70px) rotate(-50deg);
+    }
+}
+
+
+/* ==================================================
+   INFORMATION SIDE
+   ================================================== */
+
+.information-side {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    margin-right: 10%;
+
+    justify-content: top;
+    align-items: flex-start;
+}
+
+
+/* ==================================================
+   INTRODUCTION + SOCIAL LINKS
+   ================================================== */
+
+.intro-links {
+    display: flex;
+
+    width: 100%;
+    padding-top:2.5rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.intro {
+    width: 50%;
+}
+
+.soc-links {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.soc-links ul {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+}
+
+.soc-links ul li {
+    list-style: none;
+    margin: 0 1.5rem;
+}
+
+
+/* ==================================================
+   TEXT
+   ================================================== */
+
+.introduction,
+.description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+}
+
+.introduction {
+    font-weight: 300;
+}
+
+.description {
+    font-weight: 300;
+
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+}
+
+
+.text-breaker {
+    margin-top: 1.5rem;
+    padding: 0.9rem;
+
+    background-color: #9098DB;
+    color: #160447;
+
+    text-align: center;
+    letter-spacing: .35em;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    box-shadow: 0 10px 25px rgba(53, 35, 75, 0.25);
+}
+
+
+/* ==================================================
+   NAME
+   ================================================== */
+
+.name {
+    width: 60%;
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: 5rem;
+    font-weight: 500;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    letter-spacing: .15em;
+
+    border-right: .15em solid #FFFFFF;
+
+    animation:
+        typing 3s steps(30, end),
+        blink-caret .75s step-end infinite;
+
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 60%;
+    }
+}
+
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #FFFFFF;
+    }
+}
+
+
+/* ==================================================
+   SCHOOL WORKS LINK
+   ================================================== */
+
+.schoolworks-link {
+    display: inline-block;
+
+    padding: 25px 20px;
+
+    background-color: #9098DB;
+    color: white;
+
+    text-decoration: none;
+    letter-spacing: .25em;
+    font-size: 1.25rem;
+
+    border-radius: 50px;
+
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+}
+
+
+/* ==================================================
+   RESPONSIVE — TABLETS
+   ================================================== */
+
+@media (max-width: 1024px) {
+
+    .top-nav {
+        height: 8%;
+    }
+
+    .top-nav ul {
+        width: 65%;
+        padding: 0 2rem;
+
+        font-size: 1rem;
+    }
+
+    .home,
+    .about-me,
+    .school-works {
+        padding: 12px 25px;
+    }
+
+    .home:hover,
+    .about-me:hover,
+    .school-works:hover {
+        font-size: 1.2rem;
+    }
+
+    .main-content {
+        padding-top: 8%;
+    }
+
+    .profile-side img {
+        width: 42%;
+        margin-left: 28%;
+    }
+
+    .information-side {
+        width: 50%;
+        margin-right: 5%;
+    }
+
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .introduction,
+    .description,
+    .text-breaker {
+        font-size: 1rem;
+    }
+
+    .schoolworks-link {
+        padding: 20px 18px;
+        font-size: 1rem;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — SMALL TABLETS
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        background-size:
+            auto 40%,
+            45% auto,
+            cover;
+    }
+
+    .top-nav {
+        height: 10%;
+    }
+
+    .top-nav ul {
+        width: 85%;
+        height: 65%;
+        padding: 0 1rem;
+
+        font-size: .8rem;
+    }
+
+    .home,
+    .about-me,
+    .school-works {
+        padding: 10px 15px;
+    }
+
+    .home:hover,
+    .about-me:hover,
+    .school-works:hover {
+        font-size: .95rem;
+    }
+
+
+    /* STACK MAIN CONTENT */
+
+    .main-content {
+        flex-direction: column;
+
+        min-height: 100vh;
+
+        padding-top: 12%;
+        padding-bottom: 5%;
+
+        overflow: visible;
+    }
+
+
+    /* PROFILE */
+
+    .profile-side {
+        width: 100%;
+        height: 28rem;
+        min-height: 28rem;
+    }
+
+    .profile-side img {
+        width: 30%;
+        margin-top: 3%;
+        margin-left: 35%;
+    }
+
+
+    /* INFORMATION */
+
+    .information-side {
+        width: 90%;
+        margin: 0 auto;
+
+        align-items: center;
+    }
+
+    .intro-links {
+        width: 100%;
+        margin-top: 2rem;
+
+        flex-direction: column;
+    }
+
+    .intro,
+    .soc-links {
+        width: 100%;
+    }
+
+    .name {
+        width: 100%;
+
+        font-size: 3rem;
+
+        text-align: center;
+    }
+
+    .description,
+    .introduction {
+        text-align: center;
+    }
+
+    .text-breaker {
+        width: 100%;
+    }
+
+    .soc-links ul {
+        padding: 0;
+    }
+
+    .schoolworks-link {
+        margin-top: 1rem;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — PHONES
+   ================================================== */
+
+@media (max-width: 480px) {
+
+    .top-nav {
+        height: 9%;
+    }
+
+    .top-nav ul {
+        width: 92%;
+        padding: 0 .5rem;
+
+        font-size: .6rem;
+    }
+
+    .home,
+    .about-me,
+    .school-works {
+        padding: 8px 10px;
+    }
+
+    .home:hover,
+    .about-me:hover,
+    .school-works:hover {
+        font-size: .7rem;
+    }
+
+
+    .main-content {
+        padding-top: 12%;
+    }
+
+
+    /* PROFILE */
+
+    .profile-side {
+        height: 22rem;
+        min-height: 22rem;
+    }
+
+    .profile-side img {
+        width: 45%;
+        margin-left: 27%;
+    }
+
+
+    /* INFORMATION */
+
+    .information-side {
+        width: 92%;
+    }
+
+    .name {
+        font-size: 2rem;
+        letter-spacing: .1em;
+    }
+
+    .introduction,
+    .description,
+    .text-breaker {
+        font-size: .85rem;
+    }
+
+    .text-breaker {
+        padding: .7rem;
+        letter-spacing: .2em;
+    }
+
+    .description {
+        margin-bottom: 1.5em;
+    }
+
+    .schoolworks-link {
+        padding: 16px 15px;
+        font-size: .75rem;
+        letter-spacing: .15em;
+    }
+
+    .soc-links ul li {
+        margin: 0 .7rem;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — VERY SMALL PHONES
+   ================================================== */
+
+@media (max-width: 360px) {
+
+    .top-nav ul {
+        width: 96%;
+    }
+
+    .home,
+    .about-me,
+    .school-works {
+        padding: 7px 7px;
+    }
+
+    .profile-side {
+        height: 19rem;
+        min-height: 19rem;
+    }
+
+    .name {
+        font-size: 1.6rem;
+    }
+
+    .introduction,
+    .description,
+    .text-breaker {
+        font-size: .75rem;
+    }
+
+    .schoolworks-link {
+        font-size: .65rem;
+    }
+}
+
+
+/* ==================================================
+   SHORT DESKTOP SCREENS
+   ================================================== */
+
+@media (max-height: 700px) and (min-width: 769px) {
+
+    .top-nav {
+        height: 9%;
+    }
+
+    .main-content {
+        padding-top: 9%;
+    }
+
+    .profile-side img {
+        width: 30%;
+        margin-top: 2%;
+    }
+
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .intro-links {
+        margin-top: 2rem;
+    }
+
+    .description {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .schoolworks-link {
+        padding: 18px 16px;
+        font-size: 1rem;
+    }
+}
+
+
+/* ==================================================
+   VERY SHORT DESKTOP SCREENS
+   ================================================== */
+
+@media (max-height: 550px) and (min-width: 769px) {
+
+    .top-nav {
+        height: 10%;
+    }
+
+    .main-content {
+        min-height: 100vh;
+        padding-top: 10%;
+    }
+
+    .profile-side img {
+        width: 25%;
+    }
+
+    .name {
+        font-size: 2.8rem;
+    }
+
+    .introduction,
+    .description,
+    .text-breaker {
+        font-size: .9rem;
+    }
+
+    .intro-links {
+        margin-top: 1rem;
+    }
+
+    .description {
+        margin-top: .8rem;
+        margin-bottom: 1rem;
+    }
+
+    .schoolworks-link {
+        padding: 14px 15px;
+        font-size: .8rem;
+    }
+}
